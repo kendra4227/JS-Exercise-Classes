@@ -186,7 +186,7 @@ class Instructor extends Lambdasian {
 
     }
 }
-let person1 = new
+
 
 /*
   TASK 5
@@ -218,7 +218,7 @@ let person1 = new
             student.name has begun sprint challenge on { subject }
             `
 */
-    class Student extends Lambdasian {
+class Student extends Lambdasian {
     constructor(student1) {
         super(student1);
         this.previousBackground = student1.previousBackground;
