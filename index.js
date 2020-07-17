@@ -143,7 +143,6 @@ class Lambdasian {
         return `Hello my name is ${this.name}, I am from  ${this.location}`;
     }
 }
-
 /*
   TASK 4
     - Write an Instructor class extending Lambdasian.
@@ -179,12 +178,13 @@ class Instructor extends Lambdasian {
 
 
     }
-    demo(student, subject) {
-        return `${student.name} receives a perfect score on ${subject}`;
+    demo(subject) {
+        return `Today we are learning about ${subject}`;
     }
-    grade() {
+    grade(subject) {
+        return `${this.name} receives a perfect score on ${subject}`;
+    }
 
-    }
 }
 
 
@@ -226,16 +226,18 @@ class Student extends Lambdasian {
         this.favSubjects = student1.favSubjects;
     }
     listSubjects() {
-        return `Loving HTML, CSS,JS!`;
+        return `Loving HTML, CSS, JS!`;
 
     }
     PRAssignment(subject) {
         return `${Student.name} has submitted a PR for ${subject}`;
     }
-    sprintChallenge(subject) {
-        return `${Student.name} has begun sprint challenge on ${subject}`;
+
+    sprintChallenge() {
+        return `{student.name} has begun sprint challenge on { subject }`;
 
     }
+
 
 }
 
@@ -266,16 +268,12 @@ class ProjectManager extends Instructor {
         this.gradClassName = manager.gradClassName;
         this.favInstructor = manager.favInstructor;
     }
-    grade() {
-
-    }
     standUp() {
-
+        return `{name} announces to {channel}, @channel standy times!`;
     }
     debugsCode() {
-
+        return `{ name } debugs { student.name }'s code on {subject}`;
     }
-
 }
 
 
