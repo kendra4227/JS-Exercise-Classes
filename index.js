@@ -109,10 +109,10 @@ class Car {
             this.tank = 0;
             if (this.tank == 0) {
                 return `I ran out of fuel at ${this.odometer} miles!`;
-            };
-        };
-    };
-};
+            }
+        }
+    }
+}
 
 
 /*
@@ -138,12 +138,10 @@ class Lambdasian {
         this.name = student.name;
         this.age = student.age;
         this.location = student.location;
-
     }
     speak() {
         return `Hello my name is ${this.name}, I am from  ${this.location}`;
     }
-
 }
 
 /*
@@ -173,7 +171,7 @@ class Lambdasian {
             string as arguments and returns '{student.name} receives a perfect score on {subject}' */
 
 class Instructor extends Lambdasian {
-    constructor(student, specialty, favLanguage, catchPhrase) {
+    constructor(student) {
         super(student);
         this.specialty = student.specialty;
         this.favLanguage = student.favLanguage;
@@ -182,13 +180,13 @@ class Instructor extends Lambdasian {
 
     }
     demo(student, subject) {
-        return `${this.name} receives a perfect score on {subject}`;
+        return `${student.name} receives a perfect score on ${subject}`;
+    }
+    grade() {
 
     }
-
-
-
 }
+let person1 = new
 
 /*
   TASK 5
@@ -220,7 +218,22 @@ class Instructor extends Lambdasian {
             student.name has begun sprint challenge on { subject }
             `
 */
-class Student {
+    class Student extends Lambdasian {
+    constructor(student1) {
+        super(student1);
+        this.previousBackground = student1.previousBackground;
+        this.className = student1.className;
+        this.favSubjects = student1.favSubjects;
+    }
+    listSubjects() {
+
+    }
+    PRAssignment(subject) {
+        return `${Student.name} has submitted a PR for ${subject}`;
+    }
+    sprintChallenge() {
+
+    }
 
 }
 
@@ -244,23 +257,39 @@ class Student {
         + `
             debugsCode ` a method that takes in a student object and a subject and returns ` { name }
             debugs { student.name }
-            's code on {subject}` * /
-            class ProjectManager {
+            's code on {subject}` */
+class ProjectManager extends Instructor {
+    constructor(manager) {
+        super(manager);
+        this.gradClassName = manager.gradClassName;
+        this.favInstructor = manager.favInstructor;
+    }
+    grade() {
 
-            }
+    }
+    standUp() {
 
-            /*
-              STRETCH PROBLEM (no tests!)
-                - Extend the functionality of the Student by adding a prop called grade and setting it equal to a number between 1-100.
-                - Now that our students have a grade build out a method on the Instructor (this will be used by _BOTH_ instructors and PM's) that will randomly add or subtract points to a student's grade. _Math.random_ will help.
-                - Add a graduate method to a student.
-                  + This method, when called, will check the grade of the student and see if they're ready to graduate from Lambda School
-                  + If the student's grade is above a 70% let them graduate! Otherwise go back to grading their assignments to increase their score.
-            */
+    }
+    debugsCode() {
+
+    }
+
+}
+
+
+/*
+  STRETCH PROBLEM (no tests!)
+    - Extend the functionality of the Student by adding a prop called grade and setting it equal to a number between 1-100.
+    - Now that our students have a grade build out a method on the Instructor (this will be used by _BOTH_ instructors and PM's) that will randomly add or subtract points to a student's grade. _Math.random_ will help.
+    - Add a graduate method to a student.
+      + This method, when called, will check the grade of the student and see if they're ready to graduate from Lambda School
+      + If the student's grade is above a 70% let them graduate! Otherwise go back to grading their assignments to increase their score.
+*/
 
 ///////// END OF CHALLENGE /////////
 ///////// END OF CHALLENGE /////////
 ///////// END OF CHALLENGE /////////
+
 if (typeof exports !== 'undefined') {
     module.exports = module.exports || {}
     if (Airplane) { module.exports.Airplane = Airplane }
@@ -271,3 +300,7 @@ if (typeof exports !== 'undefined') {
     if (Student) { module.exports.Student = Student }
     if (ProjectManager) { module.exports.ProjectManager = ProjectManager }
 }
+if (Student) { module.exports.Student = Student }
+if (ProjectManager) { module.exports.ProjectManager = ProjectManager }
+if (Student) { module.exports.Student = Student }
+if (ProjectManager) { module.exports.ProjectManager = ProjectManager }
